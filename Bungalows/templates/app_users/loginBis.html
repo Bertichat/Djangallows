@@ -1,0 +1,13 @@
+{% extends "general_bis.html" %}
+
+{% block content %}
+    <h3 class="text-center text-light my-2">Connecte-toi</h3>
+
+  <form class="login text-primary container text-center" method="POST" action="{% url 'app_users:Login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button class="primaryAction btn btn-outline-light" type="submit"> Se connecter </button>
+</form>
+
+{% endblock content %}

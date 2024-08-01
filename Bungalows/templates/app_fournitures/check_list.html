@@ -1,0 +1,41 @@
+{% extends 'general.html' %}
+{% block content %}
+<div id="expo_fourniture" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    <h1 class="text-light text-center">CHECK-LIST</h1>
+
+    <div class="container text-center text-light my-2">
+        <a class="btn btn-primary" href="{% url 'app_users:Welcome'%}">Accueil</a>
+    </div>
+    
+    <table class="container table text-light text-center border border-light">
+        <thead>
+            <tr>
+                <th schope="col">Fourniture</th>
+                <th schope="col">Attendu</th>
+                <th schope="col">Actuel</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fourniture in check_list %}
+                <tr>
+                    <td>{{fourniture.name}}</td>
+                    <td>{{fourniture.attendu}}</td>
+                    <td id="fourniture-{{fourniture.id}}" hx-get="{% url 'app_fournitures:updateFourniture' fourniture.pk%}"
+                        hx-target="#fourniture-{{fourniture.id}}" hx-trigger="load" hx-swap="innerHTML" >
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+    <div class="container text-center text-light my-2">
+        <a id="submit-checkin" class="btn btn-primary" hx-get="{% url 'app_fournitures:Fourniture_diff'%}"
+        hx-target="#expo_fourniture" hx-trigger="click on:#submit-checkin" hx-swap="innerHTML">Terminer</a>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+

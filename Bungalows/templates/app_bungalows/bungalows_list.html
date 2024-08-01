@@ -1,0 +1,8 @@
+
+<div class="container text-center text-light">
+    <div class="row row-cols-2 row-cols-md-2 g-2 text-center my-2 py-2">
+        {% for bungalow in bungalows_list %}
+            <a class="btn btn-primary" href="{% url 'app_bungalows:BungalowsChoice'%}?pk={{bungalow.pk}}">{{bungalow.name}}</a>
+        {% endfor %}
+    </div>
+</div>

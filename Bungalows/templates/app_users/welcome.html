@@ -1,0 +1,13 @@
+{% extends 'general.html' %}
+{% block content %}
+
+    <div>
+        <h3 class="text-center text-light  ">Bienvenue sur l'app Bungalow</h3>
+    </div>
+
+    <div id="b-list" hx-get="{% url 'app_bungalows:BungalowsList' %}" hx-target="#b-list"
+            hx-swap="innerHTML" hx-trigger="load" class="container text-center">
+    </div>
+
+    
+{% endblock %}

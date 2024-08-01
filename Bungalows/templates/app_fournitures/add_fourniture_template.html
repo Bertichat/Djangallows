@@ -1,0 +1,24 @@
+{% extends "general.html" %}
+
+{% block content %}
+<div class="container text-center" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    <h1 class="text-light border border-secondary text-center">"Ajoute tes fournitures"</h1>
+
+    <button id="addFournitureClick" type="button" class="btn btn-primary" hx-get="{% url 'app_fournitures:addFourniture'%}" 
+            hx-target="#listFournitureAdd" hx-swap="beforeend">
+        Ajouter
+    </button>
+
+    <button type="button" class="btn btn-primary" id="submit-fourniture">Tout enregistrer</button>
+
+    <a class="btn btn-primary" href="{% url 'app_bungalows:BungalowsChoice'%}">Terminer</a>
+
+    <div id="listFournitureAdd" class="text-center text-light border border-secondary">
+        
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

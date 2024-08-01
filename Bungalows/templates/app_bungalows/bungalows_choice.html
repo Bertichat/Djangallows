@@ -1,0 +1,16 @@
+{% extends 'general.html' %}
+{% block content %}
+
+<h1 class="text-light text-center">Que veux-tu faire?</h1>
+<div class="container text-center text-light my-2">
+    
+    <a class="btn btn-primary" href="{% url 'app_fournitures:Fourniture_checklist'%}">CheckList</a>
+    <a class="btn btn-primary" href="{% url 'app_fournitures:addFournitureTemplate'%}">Ajouter des fournitures</a>
+    <a class="btn btn-primary" href="{% url 'app_bungalows:BungalowsMaj'%}">Mettre à jour</a>
+</div>
+<div class="container text-center text-light my-2">
+    <a class="btn btn-primary" href="{% url 'app_users:Welcome'%}">Accueil</a>
+</div>
+{% endblock %}
+
+

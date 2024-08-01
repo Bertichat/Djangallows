@@ -1,0 +1,12 @@
+{% extends "general_bis.html" %}
+
+{% block content %}
+<h1 class="text-light border border-secondary text-center">"Déconnexion"</h1>
+
+<form class="container text-center" method="post" action="{% url 'app_users:Logout' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-outline-primary text-light text-center" type="submit">Se déconnecter</button>
+</form>
+
+{% endblock content %}
