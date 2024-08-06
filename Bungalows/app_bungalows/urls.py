@@ -8,4 +8,5 @@ urlpatterns = [
     path('BungalowsChoice', BungalowsChoice,  name='BungalowsChoice'),
     path('BungalowsMaj', BungalowsMaj,  name='BungalowsMaj'),
     path('BungalowsMajSetItems', BungalowsMajSetItems,  name='BungalowsMajSetItems'),
+    path('BungalowsCopySetItems', BungalowsCopySetItems,  name='BungalowsCopySetItems'),
 ]

@@ -1,0 +1,12 @@
+<form hx-post="{% url 'app_bungalows:BungalowsCopySetItems'%}" hx-encoding="multipart/form-data"
+        hx-trigger="keyup[enterKey], click from:#submit-bungalow" class="">
+
+    <div class="container text-center py-2">
+        {{form.as_p}}
+        <button type="button" class="btn btn-primary" id="submit-bungalow" hx-confirm="Copier ce bungalow?">choisir</button>
+    </div>
+</form>
+
+
+
+
