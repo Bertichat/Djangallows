@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-# from app_bungalows.models import Bungalow
+from app_fournitures.models import Fourniture
 
-# admin.site.register(Bungalow)
+admin.site.register(Fourniture)

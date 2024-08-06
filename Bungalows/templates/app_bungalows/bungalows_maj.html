@@ -4,10 +4,15 @@
     <div class="text-light">
         Que met-on à jour?
     </div>
-    <a class="button"></a>
+    <button class="btn btn-primary" hx-confirm="Enregistrer l'état du bungalow?"
+            hx-get="{% url 'app_bungalows:BungalowsMajSetItems'%}" 
+            hx-target="#update_info" hx-swap="innerHTML">Enregistrer état bungalow</button>
 </div>
     
-    
+<div id="update_info">
+</div>
+
+
 
 
 {% endblock %}

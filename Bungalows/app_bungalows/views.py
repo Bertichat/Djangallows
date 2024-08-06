@@ -3,7 +3,10 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
 from app_bungalows.models import Bungalow
+from app_fournitures.models import Fourniture
 from django.db.models.query import QuerySet
+from django.db.models import F
+
 
 class Bungalow_list_view(ListView):
     model = Bungalow
@@ -39,3 +42,15 @@ class Bungalow_maj_view(TemplateView):
         return context
 
 BungalowsMaj = Bungalow_maj_view.as_view()
+
+class Bungalow_maj_setItems_view(TemplateView):
+    template_name = "app_bungalows/bungalows_maj_info.html"
+    # paginate_by = 6
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        b_id = self.request.session["bungalow_active"]
+        Fourniture.objects.filter(bungalow=b_id).update(attendu=F('compte_base'))
+        context = super().get_context_data(**kwargs)
+        return context
+
+BungalowsMajSetItems = Bungalow_maj_setItems_view.as_view()

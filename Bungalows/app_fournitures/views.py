@@ -83,9 +83,7 @@ class Fourniture_diff_view(ListView):
         b_id = self.request.session["bungalow_active"]
         # queryset = ProductToCompose.objects.filter(company_id__in=companies).order_by("p_name")
         queryset = Fourniture.objects.filter(bungalow=b_id).annotate(diff=F('attendu')-F('compte_base'))
-        print("yo")
-        for i in queryset.values_list('diff', flat=True):
-            print(i)
+        
         return queryset
     
 Fourniture_diff = Fourniture_diff_view.as_view()

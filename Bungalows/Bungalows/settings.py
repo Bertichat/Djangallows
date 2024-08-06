@@ -17,9 +17,9 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-print("yo")
-print(str(BASE_DIR / ".env"))
-environ.Env.read_env(env_file=str(BASE_DIR / ".env"))
+print(str(BASE_DIR / "Bungalows" / ".env"))
+
+environ.Env.read_env(env_file=str(BASE_DIR /"Bungalows" / ".env"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,7 +33,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG")
 #True
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 #["127.0.0.1"]
 
 AUTHENTICATION_BACKENDS = [

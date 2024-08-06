@@ -7,4 +7,5 @@ urlpatterns = [
     path('BungalowsList', BungalowsList,  name='BungalowsList'),
     path('BungalowsChoice', BungalowsChoice,  name='BungalowsChoice'),
     path('BungalowsMaj', BungalowsMaj,  name='BungalowsMaj'),
+    path('BungalowsMajSetItems', BungalowsMajSetItems,  name='BungalowsMajSetItems'),
 ]

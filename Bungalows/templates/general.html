@@ -14,14 +14,17 @@
     {% bootstrap_messages %}
 </head>
 
-<body class="d-flex flex-column min-vh-100 bg-dark text-center">
+<body class="bg-dark text-center text-light">
     <h1 class="text-light text-center">BUNGALOWS</h1>
-
+    
     {% block content %}
     {% endblock %}
-    <footer class="mt-auto">
-        <a class="btn btn-primary text-center" href="{% url 'app_users:Logout'%}">Se Déconnecter</a>
-    </footer>
+
+    <div class="container my-2">
+        <a class="btn btn-success" href="{% url 'app_users:Welcome'%}">Accueil</a>
+        <a class="btn btn-danger text-center" href="{% url 'app_users:Logout'%}">Se Déconnecter</a>
+    </div> 
+    
 </body>
 
 
