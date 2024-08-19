@@ -3,10 +3,15 @@
 
 <h1 class="">Que veux-tu faire?</h1>
 <div class="container my-2">
-    
-    <a class="btn btn-primary" href="{% url 'app_fournitures:Fourniture_checklist'%}">CheckList</a>
-    <a class="btn btn-primary" href="{% url 'app_fournitures:addFournitureTemplate'%}">Ajouter des fournitures</a>
-    <a class="btn btn-primary" href="{% url 'app_bungalows:BungalowsMaj'%}">Mettre à jour</a>
+    <div class = row>
+        <a class="btn btn-primary my-2 py-5" href="{% url 'app_fournitures:Fourniture_checklist'%}">CheckList</a>
+    </div>
+    <div class = row>
+        <a class="btn btn-primary my-2 py-5" href="{% url 'app_fournitures:addFournitureTemplate'%}">Ajouter des fournitures</a>
+    </div>
+    <div class = row>
+        <a class="btn btn-primary my-2 py-5 h1" href="{% url 'app_bungalows:BungalowsMaj'%}">Mettre à jour</a>
+    </div>
 </div>
 {% endblock %}
 

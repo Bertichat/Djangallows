@@ -1,13 +1,15 @@
 {% extends 'general_bis.html' %}
 {% block content %}
 
-    <div>
-        <h3 class="text-center text-light  ">Bienvenue sur l'app Bungalow</h3>
+    <div class="text-center text-light h1">Bienvenue sur l'app Bungalow</div>
+
+    <div hx-get="{% url 'app_bungalows:BungalowsList' %}" hx-target="#b-list"
+            hx-swap="innerHTML" hx-trigger="load" class="row">
+        <div id="b-list" class="col">
+        </div>
     </div>
 
-    <div id="b-list" hx-get="{% url 'app_bungalows:BungalowsList' %}" hx-target="#b-list"
-            hx-swap="innerHTML" hx-trigger="load" class="container text-center">
-    </div>
+    
     <footer class="">
         <a class="btn btn-danger text-center" href="{% url 'app_users:Logout'%}">Se Déconnecter</a>
     </footer>

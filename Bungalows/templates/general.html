@@ -20,9 +20,9 @@
     {% block content %}
     {% endblock %}
 
-    <div class="container my-2">
-        <a class="btn btn-success" href="{% url 'app_users:Welcome'%}">Accueil</a>
-        <a class="btn btn-danger text-center" href="{% url 'app_users:Logout'%}">Se Déconnecter</a>
+    <div class="container-fluid">
+        <a class="btn btn-success px-3 mx-2 my-2" href="{% url 'app_users:Welcome'%}">Accueil</a>
+        <a class="btn btn-danger text-center px-3 mx-2 my-2" href="{% url 'app_users:Logout'%}">Se Déconnecter</a>
     </div> 
     
 </body>

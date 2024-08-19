@@ -1,17 +1,22 @@
 {% extends 'general.html' %}
 {% block content %}
-<div hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
-    <div class="text-light">
+<div class = "container" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    <div class="text-light h1">
         Que met-on à jour?
     </div>
-    <button class="btn btn-primary" hx-confirm="Enregistrer l'état du bungalow?"
+
+    <div class = row>
+        <button class="btn btn-primary my-2 py-5" hx-confirm="Enregistrer l'état du bungalow?"
             hx-get="{% url 'app_bungalows:BungalowsMajSetItems'%}" 
             hx-target="#update_info" hx-swap="innerHTML">Enregistrer état bungalow</button>
+    </div>
 
-    <button class="btn btn-primary"
+    <div class = row>
+        <button class="btn btn-primary my-2 py-5"
             hx-get="{% url 'app_bungalows:BungalowsCopySetItems'%}" 
             hx-target="#update_info" hx-swap="innerHTML">Copier Set d'un autre Bungalow</button>
-            
+    </div>
+
     <div id="update_info">
     </div>
 </div>

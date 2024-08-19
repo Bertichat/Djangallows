@@ -1,8 +1,16 @@
 
-<div class="container text-center text-light">
+<div class="container">
+    {% for bungalow in bungalows_list %}
+        <div class="row my-2 h1">
+                <a class="col btn btn-primary py-5 h1" href="{% url 'app_bungalows:BungalowsChoice'%}?pk={{bungalow.pk}}">{{bungalow.name}}</a>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- <div class="container text-center text-light">
     <div class="row row-cols-2 row-cols-md-2 g-2 text-center my-2 py-2">
         {% for bungalow in bungalows_list %}
             <a class="btn btn-primary" href="{% url 'app_bungalows:BungalowsChoice'%}?pk={{bungalow.pk}}">{{bungalow.name}}</a>
         {% endfor %}
     </div>
-</div>
+</div> -->
